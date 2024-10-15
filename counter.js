@@ -34,3 +34,6 @@ function updateStatistics() {
     // Update UI
     updateUI(wordCount, charCount, sentenceCount, paragraphCount, readingTime);
 }
+
+// Call updateStatistics whenever the text input changes
+document.getElementById('text-input').addEventListener('input', updateStatistics);
