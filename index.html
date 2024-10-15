@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Counter</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/2.1.3/marked.min.js"></script>
+</head>
+<body>
+    <header>
+        <img src="assets/logo.png" alt="Logo">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="privacy-policy.html">Privacy Policy</a>
+        </nav>
+    </header>
+    <main>
+        <section class="input-area">
+            <textarea id="text-input" placeholder="Enter your text here"></textarea>
+            <input type="file" id="file-upload" accept=".txt">
+            <input type="text" id="keyword-input" placeholder="Enter keyword here">
+        </section>
+        <section class="statistics">
+            <div class="stat">
+                <label for="word-count">Word Count:</label>
+                <span id="word-count">0</span>
+            </div>
+            <div class="stat">
+                <label for="char-count">Character Count:</label>
+                <span id="char-count">0</span>
+            </div>
+            <div class="stat">
+                <label for="sentence-count">Sentence Count:</label>
+                <span id="sentence-count">0</span>
+            </div>
+            <div class="stat">
+                <label for="paragraph-count">Paragraph Count:</label>
+                <span id="paragraph-count">0</span>
+            </div>
+            <div class="stat">
+                <label for="reading-time">Reading Time:</label>
+                <span id="reading-time">0</span>
+            </div>
+            <div class="stat">
+                <label for="keyword-density">Keyword Density:</label>
+                <span id="keyword-density">0%</span>
+            </div>
+            <div class="stat">
+                <label for="readability">Readability:</label>
+                <span id="readability">0</span>
+            </div>
+            <div class="stat">
+                <label for="common-words">Most Common Words:</label>
+                <span id="common-words"></span>
+            </div>
+        </section>
+        <section class="manipulation-tools">
+            <button id="uppercase">Uppercase</button>
+            <button id="lowercase">Lowercase</button>
+            <button id="remove-spaces">Remove Extra Spaces</button>
+            <button id="convert-markdown">Convert Markdown</button> <!-- Added Markdown button -->
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Word Counter</p>
+        <a href="privacy-policy.html">Privacy Policy</a>
+    </footer>
+    <script src="js/main.js"></script>
+    <script src="js/counter.js"></script>
+    <script src="js/analyzer.js"></script>
+    <script src="js/manipulator.js"></script>
+    <script src="js/ui.js"></script>
+    <script>
+        document.getElementById('convert-markdown').addEventListener('click', function() {
+            const markdownText = document.getElementById('text-input').value; // Use the main text input for Markdown
+            const htmlContent = marked(markdownText);
+            document.getElementById('text-input').value = htmlContent; // Replace text input with converted HTML
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+/* Dark theme color palette */
+body {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Specific dark mode adjustments */
+textarea {
+    background-color: #444;
+    color: #fff;
+}
+
+.stat {
+    background-color: #444;
+    color: #fff;
+}
