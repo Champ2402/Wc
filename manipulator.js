@@ -8,14 +8,14 @@ function convertCase(type) {
         text = text.toLowerCase();
     }
     document.getElementById('text-input').value = text;
-    updateStatistics();
+    updateStatistics(); // Ensure this function updates the statistics
 }
 
 function removeExtraSpaces() {
     let text = document.getElementById('text-input').value;
-    text = text.replace(/\s+/g, ' '); // Fixed regex pattern
+    text = text.replace(/\s+/g, ' ').trim(); // Fixed regex pattern and trim to remove leading/trailing spaces
     document.getElementById('text-input').value = text;
-    updateStatistics();
+    updateStatistics(); // Ensure this function updates the statistics
 }
 
 // Add event listeners for buttons
