@@ -62,7 +62,7 @@
             <button id="uppercase">Uppercase</button>
             <button id="lowercase">Lowercase</button>
             <button id="remove-spaces">Remove Extra Spaces</button>
-            <button id="convert-markdown">Convert Markdown</button> <!-- Added Markdown button -->
+            <button id="convert-markdown">Convert Markdown</button>
         </section>
     </main>
     <footer>
@@ -79,6 +79,22 @@
             const markdownText = document.getElementById('text-input').value; // Use the main text input for Markdown
             const htmlContent = marked(markdownText);
             document.getElementById('text-input').value = htmlContent; // Replace text input with converted HTML
+        });
+
+        // Event listeners for manipulation buttons
+        document.getElementById('uppercase').addEventListener('click', function() {
+            const textArea = document.getElementById('text-input');
+            textArea.value = textArea.value.toUpperCase();
+        });
+
+        document.getElementById('lowercase').addEventListener('click', function() {
+            const textArea = document.getElementById('text-input');
+            textArea.value = textArea.value.toLowerCase();
+        });
+
+        document.getElementById('remove-spaces').addEventListener('click', function() {
+            const textArea = document.getElementById('text-input');
+            textArea.value = textArea.value.replace(/\s+/g, ' ').trim(); // Remove extra spaces
         });
     </script>
 </body>
